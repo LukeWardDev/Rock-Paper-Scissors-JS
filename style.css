@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: #cfdfff;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.game-title{
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.scoreboard{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4em;
+    font-size: 2rem;;
+}
+
+.options{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.options img{
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    margin-bottom: 2em;
+}
+
+.info{
+    text-align: center;
+    font-size: 2rem;
+}
