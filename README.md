@@ -1,1 +1,1 @@
-# Rock-Paper-Scissors-JS
+# Odin-RockPaperScissors
