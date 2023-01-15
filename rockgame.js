@@ -1,3 +1,19 @@
+const info = document.querySelector('.info');
+const pScore = document.querySelector('.pScore');
+const cScore = document.querySelector('.comScore');
+const roundDisplay = document.querySelector('.roundNum');
+const rockIcon = document.querySelector('#rock');
+const paperIcon = document.querySelector('#paper');
+const scissorsIcon = document.querySelector('#scissors');
+const playButton = document.querySelector('.playRound');
+
+let playerChoice;
+let comChoice;
+let round = 0;
+let playerScore = 0;
+let comScore = 0;
+
+
 function getComputerChoice(){
     let randomNum = Math.floor(Math.random() * 3) 
     if(randomNum == 0){
@@ -18,38 +34,53 @@ function playRound(pChoice, cChoice){
     if(pChoice == "Rock" && cChoice == "Rock"){
         return 0
     } else if (pChoice == "Rock" && cChoice == "Paper"){
-        return 2
+        comScore++;
     } else if (pChoice == "Rock" && cChoice == "Scissors"){
-        return 1
+        playerScore++;
     } else if (pChoice == "Scissors" && cChoice == "Scissors"){
         return 0
     } else if (pChoice == "Scissors" && cChoice == "Rock"){
-        return 2
+        comScore++;
     } else if (pChoice == "Scissors" & cChoice == "Paper"){
-        return 1
+        playerScore++;
     } else if (pChoice == "Paper" && cChoice == "Paper"){
         return 0
     } else if (pChoice == "Paper" && cChoice == "Scissors"){
-        return 2
+        comScore++;
     } else {
-        return 1
+        playerScore++;
     }
 }
 
-function game(){
-    // let playerChoice
-    // let computerChoice
-    // let result
-    // let playerScore = 0
-    // for(i = 0; i < 5; i ++){
-    //     alert(`Round: ${i + 1}`)
-    //     playerChoice = prompt("Please select Rock, Paper or Scissors")
-    //     computerChoice = getComputerChoice()
-    //     alert(`Player Choice: ${playerChoice}. Computer Choice: ${computerChoice}.`)
-    //     result = playRound(playerChoice, computerChoice)
-    //     if(result == 1) playerScore ++
-    // }
-    // alert(`Hi player! You won ${playerScore} out of 5 times!`)
+function updateUI(message){
+    pScore.textContent = `${playerScore}`;
+    cScore.textContent = `${comScore}`;
+    roundDisplay.textContent = `${round}`;
+    info.textContent = message;
 }
 
-game()
+rockIcon.addEventListener('click', () => {
+    playerChoice = "Rock";
+    message = "Your current choice is Rock";
+    updateUI();
+});
+
+paperIcon.addEventListener('click', () => {
+    playerChoice = "Paper";
+    message = "Your current choice is Paper";
+    updateUI();
+});
+
+scissorsIcon.addEventListener('click', () => {
+    playerChoice = "Scissors";
+    message = "Your current choice is Scissors";
+    updateUI();
+});
+
+playButton.addEventListener('click', () => {
+    comChoice = getComputerChoice();
+    playRound(playerChoice, comChoice);
+    updateUI();
+    round++;
+});
+
