@@ -38,7 +38,7 @@ body{
     margin-bottom: 2em;
 }
 
-.info{
+.info, .roundOutcome{
     text-align: center;
     font-size: 2rem;
 }
@@ -52,3 +52,15 @@ body{
     cursor: pointer;
 }
 
+#resetButton{
+    width: 200px;
+    height: 50px;
+    border: 0;
+    border-radius: 2em;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.dontDisplay{
+    display: none;
+}
