@@ -37,19 +37,19 @@ function playRound(pChoice, cChoice){
 }
 
 function game(){
-    let playerChoice
-    let computerChoice
-    let result
-    let playerScore = 0
-    for(i = 0; i < 5; i ++){
-        alert(`Round: ${i + 1}`)
-        playerChoice = prompt("Please select Rock, Paper or Scissors")
-        computerChoice = getComputerChoice()
-        alert(`Player Choice: ${playerChoice}. Computer Choice: ${computerChoice}.`)
-        result = playRound(playerChoice, computerChoice)
-        if(result == 1) playerScore ++
-    }
-    alert(`Hi player! You won ${playerScore} out of 5 times!`)
+    // let playerChoice
+    // let computerChoice
+    // let result
+    // let playerScore = 0
+    // for(i = 0; i < 5; i ++){
+    //     alert(`Round: ${i + 1}`)
+    //     playerChoice = prompt("Please select Rock, Paper or Scissors")
+    //     computerChoice = getComputerChoice()
+    //     alert(`Player Choice: ${playerChoice}. Computer Choice: ${computerChoice}.`)
+    //     result = playRound(playerChoice, computerChoice)
+    //     if(result == 1) playerScore ++
+    // }
+    // alert(`Hi player! You won ${playerScore} out of 5 times!`)
 }
 
 game()
